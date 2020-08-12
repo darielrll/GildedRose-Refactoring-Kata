@@ -2,7 +2,7 @@ package com.gildedrose.rule;
 
 import com.gildedrose.Item;
 
-public class RuleUpdateQualityAgedBrie extends RuleQualityNotLegendaryItem{
+public class RuleQualityAgedBrie extends RuleQualityNotLegendaryItem{
 
     @Override
     public void updateQuality(Item item) {

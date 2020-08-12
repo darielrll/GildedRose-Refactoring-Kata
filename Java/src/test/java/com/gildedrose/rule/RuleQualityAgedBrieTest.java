@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RuleQualityAgedBrieTest {
-    private final RuleUpdateQualityAgedBrie rule = new RuleUpdateQualityAgedBrie();
+    private final RuleQualityAgedBrie rule = new RuleQualityAgedBrie();
     private final String agedBrie = "Aged Brie";
 
     @Test

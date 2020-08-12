@@ -12,7 +12,7 @@ public class RuleFactoryTest {
         String ruleAgedBrie = "Aged Brie";
         Rule rule = ruleFactory.getRule(ruleAgedBrie);
 
-        assertTrue(rule instanceof RuleUpdateQualityAgedBrie);
+        assertTrue(rule instanceof RuleQualityAgedBrie);
     }
 
     @Test
