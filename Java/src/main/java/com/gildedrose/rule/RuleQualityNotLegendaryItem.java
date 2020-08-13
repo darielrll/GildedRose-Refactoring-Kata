@@ -6,6 +6,6 @@ public class RuleQualityNotLegendaryItem extends Rule{
 
     @Override
     public void updateQuality(Item item) {
-        item.sellIn -= 1;
+        item.sellIn--;
     }
 }
