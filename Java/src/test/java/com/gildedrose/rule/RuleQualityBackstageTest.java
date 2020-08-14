@@ -50,23 +50,23 @@ class RuleQualityBackstageTest {
     }
 
     @Test
-    void should_decrease_sellIn_in_1_and_increase_quality_in_2_when_sellIn_is_gt_6_and_lt_11_and_quality_is_lt_49(){
-        Item item = new Item(backstage, 10, 48);
+    void should_decrease_sellIn_in_1_and_increase_quality_in_2_when_sellIn_is_gt_6_and_lt_11(){
+        Item item = new Item(backstage, 10, 45);
 
         rule.updateQuality(item);
 
         assertEquals(9, item.sellIn);
-        assertEquals(50, item.quality);
+        assertEquals(47, item.quality);
     }
 
     @Test
-    void should_decrease_sellIn_in_1_and_increase_quality_in_3_when_sellIn_is_lt_6_and_quality_is_lt_48(){
-        Item item = new Item(backstage, 5, 47);
+    void should_decrease_sellIn_in_1_and_increase_quality_in_3_when_sellIn_is_lt_6(){
+        Item item = new Item(backstage, 5, 40);
 
         rule.updateQuality(item);
 
         assertEquals(4, item.sellIn);
-        assertEquals(50, item.quality);
+        assertEquals(43, item.quality);
     }
 
     @Test

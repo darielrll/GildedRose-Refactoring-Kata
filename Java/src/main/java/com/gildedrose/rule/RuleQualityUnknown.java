@@ -13,8 +13,4 @@ public class RuleQualityUnknown extends RuleQualityNotLegendaryItem{
         }
         item.quality = decreaseQuality(item.quality);
     }
-
-    private int decreaseQuality(int quality) {
-        return quality > 0 ? quality - 1 : quality;
-    }
 }

@@ -12,18 +12,7 @@ public class RuleQualityAgedBrie extends RuleQualityNotLegendaryItem{
             item.quality = increaseQuality(item.quality, 2);
         }
         else {
-            item.quality = increaseQuality(item.quality, 1);
+            item.quality = increaseQuality(item.quality, 1  );
         }
-    }
-
-    private boolean hasExpiredSellDate(Item item) {
-        return item.sellIn < 0;
-    }
-
-    private int increaseQuality(int quality, int count) {
-        if(count == 0  ||  quality >= 50){
-            return quality;
-        }
-        return increaseQuality(++quality, --count);
     }
 }
