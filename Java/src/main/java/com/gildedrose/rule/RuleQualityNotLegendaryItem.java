@@ -9,10 +9,6 @@ public class RuleQualityNotLegendaryItem extends Rule{
         item.sellIn--;
     }
 
-    protected int decreaseQuality(int quality) {
-        return quality > 0 ? quality - 1 : quality;
-    }
-
     protected boolean hasExpiredSellDate(Item item) {
         return item.sellIn < 0;
     }

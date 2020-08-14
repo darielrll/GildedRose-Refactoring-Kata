@@ -9,8 +9,8 @@ public class RuleQualityUnknown extends RuleQualityNotLegendaryItem{
         super.updateQuality(item);
 
         if (item.sellIn < 0) {
-            item.quality = decreaseQuality(item.quality);
+            item.quality = decreaseQuality(item.quality, 1);
         }
-        item.quality = decreaseQuality(item.quality);
+        item.quality = decreaseQuality(item.quality, 1);
     }
 }

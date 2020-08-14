@@ -38,4 +38,12 @@ public class RuleFactoryTest {
 
         assertTrue(rule instanceof RuleQualitySulfuras);
     }
+
+    @Test
+    void should_return_conjured_quality_rule(){
+        String conjured = "Conjured";
+        Rule rule = ruleFactory.getRule(conjured);
+
+        assertTrue(rule instanceof RuleQualityConjured);
+    }
 }
