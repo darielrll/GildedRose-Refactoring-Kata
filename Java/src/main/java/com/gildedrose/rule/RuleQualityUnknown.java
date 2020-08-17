@@ -8,9 +8,11 @@ public class RuleQualityUnknown extends RuleQualityNotLegendaryItem{
     public void updateQuality(Item item) {
         super.updateQuality(item);
 
-        if (item.sellIn < 0) {
+        if (hasExpiredSellDate(item)) {
+            item.quality = decreaseQuality(item.quality, 2);
+        }
+        else {
             item.quality = decreaseQuality(item.quality, 1);
         }
-        item.quality = decreaseQuality(item.quality, 1);
     }
 }

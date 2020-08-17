@@ -6,9 +6,9 @@ public abstract class Rule {
     public abstract void updateQuality(Item item);
 
     protected int decreaseQuality(int quality, int count) {
-        if(count == 0  ||  quality == 0){
-            return quality;
+        if(quality <= 1){
+            return 0;
         }
-        return decreaseQuality(--quality, --count);
+        return quality - count;
     }
 }

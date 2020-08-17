@@ -12,7 +12,7 @@ public class RuleQualityAgedBrie extends RuleQualityNotLegendaryItem{
             item.quality = increaseQuality(item.quality, 2);
         }
         else {
-            item.quality = increaseQuality(item.quality, 1  );
+            item.quality = increaseQuality(item.quality, 1 );
         }
     }
 }
