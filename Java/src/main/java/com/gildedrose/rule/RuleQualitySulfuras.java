@@ -1,9 +1,9 @@
 package com.gildedrose.rule;
 
-import com.gildedrose.Item;
+import com.gildedrose.item.ItemProxy;
 
 public class RuleQualitySulfuras extends Rule{
 
     @Override
-    public final void updateQuality(Item item) {}
+    protected final void updateQuality(ItemProxy item) {}
 }

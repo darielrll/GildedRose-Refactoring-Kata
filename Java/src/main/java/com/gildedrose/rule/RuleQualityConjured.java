@@ -1,12 +1,12 @@
 package com.gildedrose.rule;
 
-import com.gildedrose.Item;
+import com.gildedrose.item.ItemProxy;
 
 public class RuleQualityConjured extends Rule {
 
     @Override
-    public void updateQuality(Item item) {
-        item.sellIn--;
-        item.quality = decreaseQuality(item.quality, 2);
+    protected void updateQuality(ItemProxy item) {
+        item.decreaseSellIn();
+        item.decreaseQualityIn(2);
     }
 }

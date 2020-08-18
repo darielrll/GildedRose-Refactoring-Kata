@@ -36,4 +36,8 @@ public class ItemProxy {
     public boolean lessThanNDaysLeftToSell(int days) {
         return item.sellIn < days;
     }
+
+    public void leaveWithoutQuality() {
+        item.quality = 0;
+    }
 }

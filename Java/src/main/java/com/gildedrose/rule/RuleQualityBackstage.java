@@ -1,31 +1,23 @@
 package com.gildedrose.rule;
 
-import com.gildedrose.Item;
+import com.gildedrose.item.ItemProxy;
 
 public class RuleQualityBackstage extends RuleQualityNotLegendaryItem {
 
     @Override
-    public void updateQuality(Item item) {
+    protected void updateQuality(ItemProxy item) {
         super.updateQuality(item);
 
-        if (hasExpiredSellDate(item)) {
-            item.quality = 0;
+        if (item.hasExpiredSellDate()) {
+            item.leaveWithoutQuality();
             return;
         }
-        if (lessThan5DaysLeft(item)) {
-            item.quality = increaseQuality(item.quality, 3);
+        if (item.lessThanNDaysLeftToSell(5)) {
+            item.increaseQuality(3);
             return;
         }
-        if (lessThan11DaysLeft(item)) {
-            item.quality = increaseQuality(item.quality, 2);
+        if (item.lessThanNDaysLeftToSell(11)) {
+            item.increaseQuality(2);
         }
-    }
-
-    private boolean lessThan11DaysLeft(Item item) {
-        return item.sellIn < 11;
-    }
-
-    private boolean lessThan5DaysLeft(Item item) {
-        return item.sellIn < 6;
     }
 }

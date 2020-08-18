@@ -30,7 +30,7 @@ public class ItemProxyTest {
     }
 
     @Test
-    void should_set_quality_to_0_when_count_is_gt_than_quality(){
+    void should_decrease_quality_to_0_when_count_is_gt_than_quality(){
         Item item = new Item("", 5,1);
         ItemProxy itemProxy = new ItemProxy(item);
 
@@ -84,5 +84,15 @@ public class ItemProxyTest {
         ItemProxy itemProxy = new ItemProxy(item);
 
         assertTrue(itemProxy.lessThanNDaysLeftToSell(6));
+    }
+
+    @Test
+    void should_set_quality_to_0(){
+        Item item = new Item("", -15,40);
+        ItemProxy itemProxy = new ItemProxy(item);
+
+        itemProxy.leaveWithoutQuality();
+
+        assertEquals(0, item.quality);
     }
 }

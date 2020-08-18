@@ -1,14 +1,12 @@
 package com.gildedrose.rule;
 
 import com.gildedrose.Item;
+import com.gildedrose.item.ItemProxy;
 
 public abstract class Rule {
-    public abstract void updateQuality(Item item);
-
-    protected int decreaseQuality(int quality, int count) {
-        if(quality <= 1){
-            return 0;
-        }
-        return quality - count;
+    public final void updateQuality(Item item){
+        updateQuality(new ItemProxy(item));
     }
+
+    protected abstract void updateQuality(ItemProxy item);
 }

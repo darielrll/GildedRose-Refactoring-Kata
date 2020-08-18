@@ -1,18 +1,18 @@
 package com.gildedrose.rule;
 
-import com.gildedrose.Item;
+import com.gildedrose.item.ItemProxy;
 
 public class RuleQualityUnknown extends RuleQualityNotLegendaryItem{
 
     @Override
-    public void updateQuality(Item item) {
+    protected void updateQuality(ItemProxy item) {
         super.updateQuality(item);
 
-        if (hasExpiredSellDate(item)) {
-            item.quality = decreaseQuality(item.quality, 2);
+        if (item.hasExpiredSellDate()) {
+            item.decreaseQualityIn(2);
         }
         else {
-            item.quality = decreaseQuality(item.quality, 1);
+            item.decreaseQualityIn(1);
         }
     }
 }

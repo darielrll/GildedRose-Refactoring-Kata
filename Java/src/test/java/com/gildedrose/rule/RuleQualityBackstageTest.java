@@ -30,16 +30,6 @@ class RuleQualityBackstageTest {
     }
 
     @Test
-    void should_decrease_sellIn_in_1_and_maintain_quality_when_quality_is_gt_50(){
-        Item item = new Item(backstage, 10, 51);
-
-        rule.updateQuality(item);
-
-        assertEquals(9, item.sellIn);
-        assertEquals(51, item.quality);
-    }
-
-    @Test
     void should_decrease_sellIn_in_1_and_increase_quality_in_1_when_sellIn_is_gte_11_and_quality_is_lt_50(){
         Item item = new Item(backstage, 11, 49);
 
